@@ -57,7 +57,6 @@ export  async function obtenerUbicacion(modo=1,ciudad="madrid") {
      function success(pos) {
     
       const crd =  {latitud:pos.coords.latitude ,longitud:pos.coords.longitude};
-      console.log("punto 1",pos.coords)
       resuelta(crd);
     }
 
@@ -79,11 +78,11 @@ else
 {
   try
   { 
-    console.log("punto2")
+   
     let urlcode ="https://nominatim.openstreetmap.org/search?q={"+ciudad+"}&format=json&accept-language=es";
     let data = await fetchApiData(urlcode);
     let posicion={};
-    console.log(data);
+  
     if (data.length===0)
     {
       throw new Error(`La ciudad indicada como ${ciudad} no existe, ¿Estaba bien escrita?`)
@@ -99,7 +98,7 @@ else
       posicion = {latitud:parseFloat(data[opcionelegida].lat),longitud:parseFloat(data[opcionelegida].lon)};
     }
 
-    console.log(posicion);
+  
 
    
     return posicion
