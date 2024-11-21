@@ -1,7 +1,7 @@
 "use strict"
 
 
-
+import { fetchApiData } from './fetch.js';
 
 //Nueva funcion interna para mostrar botones si cuando se hace una peticion la localizaciones 
 
@@ -81,8 +81,7 @@ else
   { 
     console.log("punto2")
     let urlcode ="https://nominatim.openstreetmap.org/search?q={"+ciudad+"}&format=json&accept-language=es";
-    let geodata = await fetch (urlcode);
-    let data = await geodata.json();
+    let data = await fetchApiData(urlcode);
     let posicion={};
     console.log(data);
     if (data.length===0)
