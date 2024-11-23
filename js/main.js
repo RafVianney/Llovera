@@ -28,12 +28,14 @@ function printWeather(jsonWeather) {
   let isRainy = new Boolean(false);
   jsonWeather.list.slice(0, 3 ).forEach((element) => {
     const id = element.weather[0].id.toString();
-    if (!id.startsWith("7") && !id.startsWith("8")) {
+    console.log("loop:",id);
+    if (id.startsWith("5") || id.startsWith("6")) {
+      
         isRainy = true;
       } 
   });
-
-  if(isRainy){
+  console.log(isRainy);
+  if(isRainy===true){
     weatherSection.innerHTML = 'Va a llover en las próximas 8 horas'
   }else {
     weatherSection.innerHTML = 'NO va a llover en las próximas 8 horas'
