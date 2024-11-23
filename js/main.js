@@ -9,7 +9,7 @@ button.addEventListener("click", async function () {
   const location = await obtenerUbicacion(modo, ciudad);
   const lat = location.latitud;
   const lon = location.longitud;
-  console.log("Latitud; ", lat, " Longitud: ", lon);
+ 
   let urlcode =
     "https://api.openweathermap.org/data/2.5/forecast?lat=" +
     lat +
@@ -18,7 +18,7 @@ button.addEventListener("click", async function () {
     "&appid=" +
     apiKey;
   const jsonWeather = await fetchApiData(urlcode);
-  console.log(jsonWeather);
+
 
   printWeather(jsonWeather);
 });
@@ -34,7 +34,7 @@ function printWeather(jsonWeather) {
         isRainy = true;
       } 
   });
-  console.log(isRainy);
+ 
   if(isRainy===true){
     weatherSection.innerHTML = 'Va a llover en las próximas 8 horas'
   }else {
