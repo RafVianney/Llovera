@@ -1,5 +1,8 @@
+'use strict'
+
 import { fetchApiData } from "./fetch.js";
 import { obtenerUbicacion } from "./geo.js";
+import { handleSearchCity } from './searchcity.js';
 const apiKey = "8688b15c50252ffd91f50c3ca5c1a8bf";
 
 const button = document.getElementById("getLocationButton");
@@ -42,3 +45,8 @@ function printWeather(jsonWeather) {
 
   }
 }
+
+// Búsqueda por texto delegada a searchcity.js
+searchCityButton.addEventListener('click', () => {
+  handleSearchCity(cityInput, leftSection, rightSection, handleError);
+});
