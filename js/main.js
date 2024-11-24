@@ -55,6 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
           data=savedata;
         }
 
+        const links = document.querySelectorAll("link[rel]");
+  
+         
+
       
       const weatherSection = document.getElementById("resumido8");
       let isRainy = new Boolean(false);
@@ -66,20 +70,54 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     
       if(isRainy===true){
-        weatherSection.innerHTML = 'Va a llover en las próximas 8 horas'
+        weatherSection.innerHTML = 'Va a llover en las próximas 8 horas';
+        links.forEach((element,indice)=>{
+          const typeref = element.type
+          
+          switch (typeref)
+          {
+           case "image/png":
+             links[indice].href="/img/rain-favicon-96x96.png"
+             break;
+             case "image/svg+xml":
+              links[indice].href="/img/rain-favicon.svg"
+               break;  
+          }
+          
+ 
+         });
       }else {
-        weatherSection.innerHTML = 'NO va a llover en las próximas 8 horas'
+        weatherSection.innerHTML = 'NO va a llover en las próximas 8 horas';
+
+        links.forEach((element,indice)=>{
+          const typeref = element.type
+     
+          switch (typeref)
+          {
+           case "image/png":
+             links[indice].href="/img/sun-favicon-96x96.png" 
+             break;
+           case "image/svg+xml":
+             links[indice].href="/img/sun-favicon.svg"
+             break;
+
+          }
+          
+ 
+         });
     
       }
+      
 
-
+      const links2 = document.querySelectorAll("link[rel]");
+      console.log(links2);
       cityName.textContent = data.city.name || 'Ubicación actual';
       const current = data.list[0];
       currentWeatherIcon.src = `http://openweathermap.org/img/wn/${current.weather[0].icon}.png`;
       currentWeatherText.textContent = `${current.weather[0].description}, ${current.main.temp}°C`;
       const forecast = data.list.slice(1, 3);
       forecastCards.innerHTML = '';
-      console.log(data.list);
+   
       
       forecast.forEach(item => {
         const card = document.createElement('div');
