@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/estilo.css" />
-	<link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
-    <link rel="shortcut icon" href="/img/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
-    <link rel="manifest" href="/img/site.webmanifest" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Lloverá?</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <link rel="manifest" href="/img/site.webmanifest" />
+</head>
+<body>
+  <header>
     <h1>Lloverá?</h1>
+  </header>
 
-    <!--Este contenedor es para un modal para elegir su una ciudad tiene varias opciones-->
-    <section id="choice-container"></section>
-
-    <div>
-        <button id='getLocationButton'>Obtener info tiempo</button>
+  <main>
+    <div id="leftSection">
+      <h2>Buscar por ciudad</h2>
+      <input type="text" id="cityInput" placeholder="Introduce una ciudad" />
+      <button id="searchCityButton">Buscar</button>
+      <!-- Contenedor adicional para opciones de selección -->
+      <div id="choice-container"></div>
     </div>
+    <div id="rightSection">
+      <h2 id="mainTitle">¿Lloverá?</h2>
+      <button id="checkRainButton">🌞 Comprobar ☔</button>
+    </div>
+    <div id="result">
+      <h2 id="cityName"></h2>
+      <div id="currentWeather">
+        <h2>Clima actual</h2>
+        <img id="currentWeatherIcon" alt="Clima actual" />
+        <p id="currentWeatherText"></p>
+      </div>
+      <div id="forecast">
+        <h2>Pronóstico</h2>
+        <div id="forecastCards"></div>
+      </div>
+      <button id="restartButton">Volver al inicio</button>
+    </div>
+  </main>
+  <footer>
+    <p>Desarrollado por Rafael Lopez, Xurxo Ojea Do Campo, Matias Valdivia y Alejandro Andres Sorribas</p>
+  </footer>
 
-    <div id="weather-section"></div>
-    <script type="module" src="js/main.js"></script>
-  </body>
+  <script type="module" src="js/main.js"></script>
+</body>
 </html>
+
