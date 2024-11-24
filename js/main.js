@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
 
       const links2 = document.querySelectorAll("link[rel]");
-      console.log(links2);
       cityName.textContent = data.city.name || 'Ubicación actual';
       const current = data.list[0];
       currentWeatherIcon.src = `http://openweathermap.org/img/wn/${current.weather[0].icon}.png`;
