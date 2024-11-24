@@ -1,0 +1,185 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2fbca8;
+    display: grid;
+    grid-template-areas: 
+    "cabeza"
+    "cuerpo"
+    "pies"; 
+    justify-content: center;
+    height: 100vh;
+    grid-template-rows: 3rem 1fr 3rem;
+
+
+  }
+  header{
+    grid-area: cabeza;
+    border-radius: 20px 20px 0px 0px;
+   
+  }
+
+  footer{
+    grid-area: pies;
+    
+    border-radius: 0px 0px 20px 20px;
+  }
+
+  header, footer {
+    background-color: #2fbca8;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  .sinresultado {
+    background-image:url(/img/fondo.jpg);
+    grid-template-areas: 
+    "upzone"
+    "midzone"; 
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+    padding: 20px;
+    grid-template-rows: 3fr 1fr;
+    overflow-x: auto;
+    background-position: center; 
+    background-repeat: no-repeat;
+  }
+  .conresultado {
+    background-image:url(/img/fondo.jpg);
+    grid-template-areas: 
+    "downzone"; 
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+    padding: 20px;
+    grid-template-rows:1fr;
+    background-position: center; 
+    background-repeat: no-repeat;
+  }
+
+
+  #midSection
+ { grid-area: upzone;
+  border-radius: 20px 20px 0px 0px;
+
+}
+
+  #upSection {
+    grid-area: midzone;
+    
+    border-radius: 0px 0px 20px 20px;
+  }
+  #midSection, #upSection {
+ 
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4ce36c4;
+    box-shadow: 0 8px 16px rgba(215, 209, 38, 0.5);
+  
+    padding: 20px;
+  }
+  
+  #midSection input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(215, 209, 38, 0.5);
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Resultado */
+  #result {
+    display: none;
+    text-align: center;
+    grid-area: downzone;
+    background-color: #f4ce36c4;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(215, 209, 38, 0.5);
+ 
+  padding: 20px;
+  }
+
+  #errorContainer{
+    display:flex;
+    flex-direction: column;
+
+    text-align: center;
+    grid-area: downzone;
+    background-color: #f5deb399;
+  border-radius: 20px;
+  padding: 20px;
+  height: 20rem;
+  }
+  
+  #forecastCards {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  .forecastCard {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Ocultar secciones de búsqueda */
+  .hidden {
+    display: none;
+  }
+
+/* Opciones de búsqueda */
+#midSection, #upSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  #midSection.hidden, #upSection.hidden {
+    display: none;
+  }
+
+  #choice-container {
+    display: grid;
+    max-width: 20rem;
+  }
+
+  #currentWeather, .forecastCard{
+    background-color: #47aec6;
+    padding: 20px;
+    margin: 10px;
+    border: 3px solid #87CEEB;
+    box-shadow: 0 8px 16px rgba(135, 206, 235, 0.5);
+    
+  }
+  #nada {
+    text-decoration: line-through;
+  }

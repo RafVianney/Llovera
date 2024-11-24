@@ -8,7 +8,6 @@ export async function fetchApiData(url, config = {}) {
     }
     return await response.json();
   } catch (error) {
-    console.error('Error al realizar la solicitud a la API:', error);
     throw error;
   }
 }

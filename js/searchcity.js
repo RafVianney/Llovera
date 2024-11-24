@@ -3,7 +3,7 @@
 import { fetchApiData } from './fetch.js';
 import { obtenerUbicacion } from './geo.js';
 
-export async function handleSearchCity(cityInput, leftSection, rightSection, handleError) {
+export async function handleSearchCity(cityInput, midSection, upSection, handleError) {
   const city = cityInput.value.trim();
   if (!city) {
     handleError(new Error('Por favor, introduce una ciudad.'));
@@ -16,8 +16,8 @@ export async function handleSearchCity(cityInput, leftSection, rightSection, han
     await getWeather(posicion.latitud, posicion.longitud, city);
 
     // Ocultar las secciones de búsqueda y mostrar los resultados
-    leftSection.style.display = 'none';
-    rightSection.style.display = 'none';
+    midSection.style.display = 'none';
+    upSection.style.display = 'none';
   } catch (error) {
     handleError(error);
   }

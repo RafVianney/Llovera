@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>¿Lloverá?</title>
-  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="stylesheet" href="/css/estilo.css" />
   <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
   <link rel="shortcut icon" href="/img/favicon.ico" />
@@ -16,34 +16,38 @@
     <h1>Lloverá?</h1>
   </header>
 
-  <main>
-    <div id="leftSection">
+  <main id="mainboard" class="sinresultado">
+    <section id="midSection" class="midzone"> 
       <h2>Buscar por ciudad</h2>
       <input type="text" id="cityInput" placeholder="Introduce una ciudad" />
       <button id="searchCityButton">Buscar</button>
       <!-- Contenedor adicional para opciones de selección -->
       <div id="choice-container"></div>
-    </div>
-    <div id="rightSection">
+    </section >
+    <section  id="upSection" class="upzone">
       <h2 id="mainTitle">¿Lloverá?</h2>
       <button id="checkRainButton">🌞 Comprobar ☔</button>
-    </div>
-    <div id="result">
+    </section >
+    <section  id="result" class="lowzone">
       <h2 id="cityName"></h2>
-      <div id="currentWeather">
+      <section id="lloveraochoh">
+        <h2>Pronóstico resumido.</h2>
+        <div id="resumido8"></div>
+      </section>
+      <article id="currentWeather">
         <h2>Clima actual</h2>
         <img id="currentWeatherIcon" alt="Clima actual" />
         <p id="currentWeatherText"></p>
-      </div>
-      <div id="forecast">
+      </article>
+      <article id="forecast">
         <h2>Pronóstico</h2>
         <div id="forecastCards"></div>
-      </div>
+      </article>
       <button id="restartButton">Volver al inicio</button>
-    </div>
+    </section >
   </main>
   <footer>
-    <p>Desarrollado por Rafael Lopez, Xurxo Ojea Do Campo, Matias Valdivia y Alejandro Andres Sorribas</p>
+    <p>Desarrollado por Rafael Lopez, Xurxo Ojea Do Campo, <span id="nada">Matias Valdivia</span> y Alejandro Andres Sorribas</p>
   </footer>
 
   <script type="module" src="js/main.js"></script>
