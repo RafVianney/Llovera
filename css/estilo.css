@@ -71,9 +71,13 @@ footer {
   background-color: rgba(0, 191, 255, 1);
   color: rgba(255, 255, 255, 1);
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   border-radius: 0 0 20px 20px;
+  height: 100%;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  font-size: 0.9rem; 
+  overflow-wrap: break-word; 
 }
 
 footer p {
@@ -98,7 +102,7 @@ footer p {
 }
 
 .sinresultado, .conresultado {
-  background-image: url('/img/fondo.jpg');
+  background-image: url('../img/fondo.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -242,5 +246,10 @@ button:hover {
       "bottom";
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
+  }
+  footer {
+    font-size: 0.75rem; /* Reduce el texto aún más en móviles */
+    padding: 8px;
+
   }
 }
