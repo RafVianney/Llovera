@@ -84,7 +84,7 @@ footer p {
 
 #result {
   grid-area: cuerpo; 
-  display: flex; 
+  display: none; 
   flex-direction: column; 
   align-items: center;
   justify-content: center; 
@@ -154,11 +154,15 @@ button:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
   grid-area: downzone;
-  background-color: rgba(245, 222, 179, 1);
+  background-color: rgb(224, 89, 89);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  color: white;
   border-radius: 20px;
   padding: 25px;
   height: 20rem;
+  margin: auto;
   justify-content: center;
 }
 
@@ -231,58 +235,12 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-  body {
-    grid-template-rows: 2.5rem 1fr 2.5rem;
-    padding: 0;
-  }
-
-  header {
-    padding: 5px;
-  }
-
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  #midSection {
-    padding: 10px;
-  }
-
-  #midSection input {
-    width: 100%;
-    font-size: 1rem;
-    padding: 10px;
-  }
-
-  button {
-    padding: 10px 15px;
-    font-size: 1rem;
-  }
-
-  #result {
-    padding: 15px;
-    margin: 0 auto;
-  }
-
-  #forecastCards {
-    gap: 8px;
-  }
-
-  footer p {
-    font-size: 0.8rem;
-  }
-
-  #choice-container {
-    max-height: 400px;
-    overflow-y: auto;
-  }
-
-  #currentWeather, .forecastCard {
-    padding: 15px;
-    margin: 10px;
-  }
-
-  #currentWeather img {
-    width: 40px;
+  main {
+    grid-template-areas: 
+      "left"
+      "right"
+      "bottom";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
   }
 }
